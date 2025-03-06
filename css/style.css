@@ -1155,6 +1155,11 @@ textarea {
 
 @media screen and (max-width: 576px) {
 
+    .home-title {
+        font-size: 48px;
+        text-align: center;
+    }
+
     .container {
         padding-inline: 1.25rem;
     }
@@ -1184,6 +1189,12 @@ textarea {
 
 /* For small devices */
 @media screen and (max-width: 400px) {
+
+    .home-title {
+        font-size: 38px;
+        text-align: center;
+    }
+
 
     .nav-menu {
         padding-left: 6rem;
