@@ -4,7 +4,7 @@
 /*=============== VARIABLES CSS ===============*/
 :root {
     /*========== Colors ==========*/
-    --hue: 165;
+    --hue: 260;
     --first-color: hsl(var(--hue), 60%, 40%);
     --title-color: hsl(var(--hue), 4%, 12%);
     --text-color: hsl(var(--hue), 4%, 20%);
@@ -449,6 +449,7 @@ textarea {
 .bg-header {
     background-color: var(--container-color);
 }
+
 
 /*=============== MAIN ===============*/
 .main {
@@ -1032,8 +1033,8 @@ textarea {
         height: 40px;
     }
 
-    .services-swiper,
-    .testimonials-swiper {
+    .services-swiper
+    {
         max-width: 900px;
     }
 
@@ -1041,11 +1042,25 @@ textarea {
         width: 90px;
     }
 
-    .skills-container {
+    
+    .sliders {
+        display: block;
+        columns: 2;
+        justify-content: center;
+        height: auto;
+        width: auto;
+        flex-wrap: wrap;
+    }
+
+
+    .skills-container
+    {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .work-container {
+    .work-container, 
+    .testimonial-container
+    {
         grid-template-columns: repeat(2, fit-content(434px));
         justify-content: center;
     }
@@ -1077,7 +1092,8 @@ textarea {
         top: 11.5px;
     }
 
-    .resume-container {
+    .resume-container
+    {
         grid-template-columns: fit-content(550px);
         justify-content: center;
         row-gap: 2.5rem;
@@ -1097,6 +1113,16 @@ textarea {
         max-width: 550px;
         width: 100%;
         margin-inline: auto;
+    }
+
+   
+    .sliders {
+        display: block;
+        columns: 2;
+        justify-content: center;
+        height: auto;
+        width: auto;
+        flex-wrap: wrap;
     }
 
 }
@@ -1127,7 +1153,8 @@ textarea {
 
     }
 
-    .skills-container {
+    .skills-container
+    {
         grid-template-columns: fit-content(550px);
     }
 
@@ -1142,6 +1169,15 @@ textarea {
 
     .work-container {
         grid-template-columns: fit-content(420px);
+    }
+
+    .sliders {
+        display: block;
+        columns: 2;
+        justify-content: center;
+        height: auto;
+        width: auto;
+        flex-wrap: wrap;
     }
 
     .footer-container {
@@ -1184,6 +1220,14 @@ textarea {
         row-gap: 3rem;
     }
 
+    .sliders {
+        display: block;
+        justify-content: center;
+        height: auto;
+        width: auto;
+        flex-wrap: wrap;
+    }
+
 
 }
 
@@ -1222,6 +1266,16 @@ textarea {
         padding-inline: 1.25rem;
     }
 
+    
+    .sliders {
+        display: block;
+        justify-content: center;
+        height: auto;
+        width: auto;
+        flex-wrap: wrap;
+    }
+
+
 }
 
 
@@ -1229,6 +1283,8 @@ textarea {
     width: 100%;
     height: auto;
     overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .swiper {
@@ -1250,29 +1306,96 @@ textarea {
 }
 
 
-.testimonial-image {
-    width: 100% !important;
-    height: auto;
-}
-
-.profile-pic {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-}
-
-.name {
-    font-weight: bold;
-    font-size: 18px;
-    margin-top: 10px;
-    color: blue;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
 .testimonial {
+    width: 500px;
+    height: 200px;
     font-style: italic;
     color: #555;
     margin-top: 10px;
     max-width: 90%;
     text-align: center;
+    min-width: 300px;
+    background: rgb(247, 236, 236);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.slider-container {
+    width: 900px;
+    overflow: hidden;
+    position: relative;
+}
+
+.sliders {
+    display: flex;
+    gap: 20px;
+
+    align-items: stretch;
+    justify-content: center;
+}
+
+.testimonial:hover {
+    transform: scale(1.05);
+}
+
+.testimonial img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #0077b5;
+}
+
+.testimonial-content {
+    flex: 1;
+}
+
+.testimonial p {
+    margin: 5px 0;
+    color: #333;
+    text-align: justify;
+}
+
+.testimonial strong {
+    font-size: 18px;
+    color: #640381;
+}
+
+.linkedin-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+
+.slider-btn {
+    position: absolute;
+    top: 510%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
 }

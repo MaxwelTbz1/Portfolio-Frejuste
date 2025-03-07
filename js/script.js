@@ -94,17 +94,21 @@ function activeWork() {
 linkWork.forEach((a) => a.addEventListener('click', activeWork));
 
 /*=============== TESTIMONIALS SWIPER ===============*/
-var swiper = new Swiper(".mySwiper", {
-    loop: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-    },
-});
+
+let index = 0;
+function moveSlide(step) {
+    const slider = document.querySelector('.slider');
+    const testimonials = document.querySelectorAll('.testimonial');
+    const totalSlides = testimonials.length;
+    index = (index + step + totalSlides) % totalSlides;
+    slider.style.transform = `translateX(${-index * 320}px)`;
+}
+
+function autoSlide() {
+    moveSlide(1);
+}
+
+setInterval(autoSlide, 5000);
 
 /*=============== STYLE SWITCHER ===============*/
 const styleSwitcher = document.getElementById("style-switcher"),
