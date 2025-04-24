@@ -119,6 +119,7 @@ a {
     text-decoration: none;
 }
 
+
 img {
     display: block;
     max-width: 100%;
@@ -328,6 +329,22 @@ textarea {
     justify-content: space-between;
     height: 5rem;
     max-width: 1540px;
+}
+
+@keyframes zoomLogo {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.nav-logo img {
+    animation: zoomLogo 3s ease-in-out infinite;
 }
 
 .nav-logo,
@@ -1033,8 +1050,7 @@ textarea {
         height: 40px;
     }
 
-    .services-swiper
-    {
+    .services-swiper {
         max-width: 900px;
     }
 
@@ -1042,7 +1058,7 @@ textarea {
         width: 90px;
     }
 
-    
+
     .sliders {
         display: block;
         columns: 2;
@@ -1053,14 +1069,12 @@ textarea {
     }
 
 
-    .skills-container
-    {
+    .skills-container {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .work-container, 
-    .testimonial-container
-    {
+    .work-container,
+    .testimonial-container {
         grid-template-columns: repeat(2, fit-content(434px));
         justify-content: center;
     }
@@ -1092,8 +1106,7 @@ textarea {
         top: 11.5px;
     }
 
-    .resume-container
-    {
+    .resume-container {
         grid-template-columns: fit-content(550px);
         justify-content: center;
         row-gap: 2.5rem;
@@ -1115,7 +1128,7 @@ textarea {
         margin-inline: auto;
     }
 
-   
+
     .sliders {
         display: block;
         columns: 2;
@@ -1153,8 +1166,7 @@ textarea {
 
     }
 
-    .skills-container
-    {
+    .skills-container {
         grid-template-columns: fit-content(550px);
     }
 
@@ -1180,10 +1192,12 @@ textarea {
         flex-wrap: wrap;
     }
 
+
     .footer-container {
         flex-direction: column;
         row-gap: 1.25rem;
     }
+
 
 
 
@@ -1223,11 +1237,12 @@ textarea {
     .sliders {
         display: block;
         justify-content: center;
-        height: auto;
-        width: auto;
+        height: auto !important;
+        width: auto !important;
         flex-wrap: wrap;
+        min-width: 444px;
+        max-width: 333px;
     }
-
 
 }
 
@@ -1266,17 +1281,111 @@ textarea {
         padding-inline: 1.25rem;
     }
 
-    
+
     .sliders {
         display: block;
         justify-content: center;
-        height: auto;
-        width: auto;
+        height: auto !important;
+        width: auto !important;
         flex-wrap: wrap;
+        z-index: 1;
+    }
+
+    .testimonial-container {
+        padding: 1rem;
+        overflow-x: hidden;
+    }
+
+    .testimonial-content {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+        padding: 1rem;
+    }
+
+    .testimonial p{
+        font-size: 14px;
+    }
+
+    .testimonial img {
+        margin-right: -20px;
+        min-width: 32px;
+        max-width: 53px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+
+    .home-title {
+        font-size: 28px;
+        text-align: center;
     }
 
 
+    .nav-menu {
+        padding-left: 4rem;
+    }
+
+    .header-deco {
+        left: 30px;
+    }
+
+    .home-banner,
+    .home-img-wrapper {
+        width: 100%;
+    }
+
+    .home-data {
+        transform: scale(0.5);
+    }
+
+    .card {
+        padding-inline: 1rem;
+        height: auto;
+        width: auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .skills-header,
+    .skills-description {
+        padding-inline: 1rem;
+    }
+
+
+    .sliders {
+        display: block;
+        justify-content: center;
+        height: auto !important;
+        width: auto !important;
+        flex-wrap: wrap;
+        z-index: 1;
+    }
+
+    .testimonial-container {
+        padding: 1rem;
+        overflow-x: hidden;
+    }
+
+
+
+    .testimonial {
+        min-width: 420px;
+        max-width: 520px;
+    }
+
+    .testimonial p{
+        font-size: 15px;
+    }
+
+    .testimonial img {
+        margin-right: -20px;
+        min-width: 42px;
+        max-width: 53px;
+    }
 }
+
 
 
 .testimonial-container {
@@ -1284,8 +1393,15 @@ textarea {
     height: auto;
     overflow: hidden;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap !important;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 1rem 0;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
 }
+
 
 .swiper {
     border-radius: 10px;
@@ -1307,14 +1423,13 @@ textarea {
 
 
 .testimonial {
-    width: 500px;
-    height: 200px;
+    width: auto !important;
+    height: auto !important;
     font-style: italic;
     color: #555;
     margin-top: 10px;
-    max-width: 90%;
     text-align: center;
-    min-width: 300px;
+    min-width: 430px;
     background: rgb(247, 236, 236);
     padding: 25px;
     border-radius: 12px;
@@ -1323,6 +1438,9 @@ textarea {
     align-items: center;
     gap: 10px;
     transition: transform 0.3s ease-in-out;
+    flex: 0 0 300px;
+    scroll-snap-align: center;
+    max-width: 510px;
 }
 
 
@@ -1334,11 +1452,12 @@ textarea {
 
 .sliders {
     display: flex;
-    gap: 20px;
-
+    gap: 1rem;
     align-items: stretch;
     justify-content: center;
+    flex-wrap: wrap !important;
 }
+
 
 .testimonial:hover {
     transform: scale(1.05);
